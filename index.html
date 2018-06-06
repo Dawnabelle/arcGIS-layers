@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DevLabs - Style a feature layer</title>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.7/"></script>
+    <script>
+      require([
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/layers/FeatureLayer",
+          "dojo/domReady!"
+        ], function(Map, MapView, FeatureLayer) {
+
+        var map = new Map({
+          basemap: "topo-vector"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-118.71921,34.07986],
+          zoom: 10
+        });
+
+        var trailheadsRenderer = {
+          "type": "simple",
+          "symbol": {
+            "type": "picture-marker",
+            "url": "http://static.arcgis.com/images/Symbols/NPS/npsPictograph_0231b.png",
+            "contentType": "image/png",
+            "width": 10.5,
+            "height": 10.5
+          }
+        }
+
+        var trailheads = new FeatureLayer({
+          url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0",
+          renderer: trailheadsRenderer
+        });
+          map.add(trailheads);
+          var trailsRenderer = {
+            "type": "unique-value",
+            "field": "USE_BIKE",
+            "uniqueValueInfos": [
+              {
+                "value": "Yes",
+                "symbol": {
+                  "color": [
+                    26,
+                    26,
+                    26,
+                    255
+                  ],
+                  "width": 0.9,
+                  "type": "simple-line",
+                  "style": "dot"
+                },
+                "label": "Bikes"
+              },
+              {
+                "value": "No",
+                "symbol": {
+                  "color": [
+                    230,
+                    0,
+                    0,
+                    255
+                  ],
+                  "width": 0.9,
+                  "type": "simple-line",
+                  "style": "dot"
+                },
+                "label": "No Bikes"
+              }
+            ]
+          }
+          var trails = new FeatureLayer({
+            url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0",
+            renderer: trailsRenderer
+          });
+          map.add(trails,0);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
