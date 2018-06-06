@@ -13,6 +13,10 @@
 </div>
 This is not my Map
 
+<div style="text-align:center">
+  <img src="./img/map.png" alt="map of Hyrule from BOTW" width="400">
+</div>
+This is my map
 
 ### Description
 _ArcGIS practice_
