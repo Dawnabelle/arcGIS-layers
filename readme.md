@@ -11,12 +11,12 @@
 <div style="text-align:center">
   <img src="./img/zelda.jpg" alt="map of Hyrule from BOTW" width="400">
 </div>
-This is not my Map
-
+This is not my map, this is a map of Hyrule
+<br>
 <div style="text-align:center">
   <img src="./img/map.png" alt="map of Hyrule from BOTW" width="400">
 </div>
-This is my map
+This is my map, this is part of California
 
 ### Description
 _ArcGIS practice_
