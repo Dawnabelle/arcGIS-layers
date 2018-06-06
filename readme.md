@@ -1,11 +1,11 @@
 <!-- Twitter icon from https://github.com/carlsednaoui/gitsocial -->
 [1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
 
-# _3D Map_
+# _Style a Feature Layer_
 
 #### ArcGIS Practice
 
- _An app returning some numbers as Beep, Boop, or more text using HTML, CSS, JavaScript  6.6.18_
+ _An map app using HTML, JavaScript, and ArcGIS  6.6.18_
 
 #### By **Dawn Mott** :sunrise_over_mountains:
 <div style="text-align:center">
@@ -36,7 +36,7 @@ _Happily awaiting a chat,_ @dawnrparty _on_ ![alt text][1.1]
 
 ### Technologies Used
 
-_HTML, CSS, JavaScript_
+_HTML, JavaScript, ArcGIS_
 
 ### License
 
