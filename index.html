@@ -33,6 +33,7 @@
           zoom: 10
         });
 
+        // Define a simple renderer and symbol
         var trailheadsRenderer = {
           "type": "simple",
           "symbol": {
@@ -44,11 +45,14 @@
           }
         }
 
+        // Create the layer and set the renderer
         var trailheads = new FeatureLayer({
           url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0",
           renderer: trailheadsRenderer
         });
-          map.add(trailheads);
+
+        // Add the layer
+        map.add(trailheads);
 
           // Define a unique value renderer and symbols
           var trailsRenderer = {
