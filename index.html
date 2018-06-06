@@ -49,6 +49,8 @@
           renderer: trailheadsRenderer
         });
           map.add(trailheads);
+
+          // Define a unique value renderer and symbols
           var trailsRenderer = {
             "type": "unique-value",
             "field": "USE_BIKE",
@@ -85,10 +87,14 @@
               }
             ]
           }
+
+          // Create the layer and set the renderer
           var trails = new FeatureLayer({
             url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0",
             renderer: trailsRenderer
           });
+
+          // Add the layer
           map.add(trails,0);
       });
     </script>
